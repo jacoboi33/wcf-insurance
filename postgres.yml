@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+#  Create a service named db.
+  db:
+#   Use the Docker Image postgres. This will pull the newest release.
+    image: "postgres:13.2"
+#   Give the container the name my_postgres. You can changes to something else.
+    container_name: "postgres-box"
+#   Setup the username, password, and database name. You can changes these values.
+    environment:
+      - POSTGRES_USER=box
+      - POSTGRES_PASSWORD=box
+      - POSTGRES_DB=box_db
+    ports:
+      - "5432:5432"
+#    volumes:
+#      - ~/Postgres/BoxDB:/var/lib/postgresql/data
+
