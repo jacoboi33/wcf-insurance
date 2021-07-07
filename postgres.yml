@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.3"
 services:
 #  Create a service named db.
   db:
@@ -8,9 +8,9 @@ services:
     container_name: "postgres-box"
 #   Setup the username, password, and database name. You can changes these values.
     environment:
-      - POSTGRES_USER=box
-      - POSTGRES_PASSWORD=box
-      - POSTGRES_DB=box_db
+      - POSTGRES_USER=wcf
+      - POSTGRES_PASSWORD=wcf
+      - POSTGRES_DB=wcf-db
     ports:
       - "5432:5432"
 #    volumes:

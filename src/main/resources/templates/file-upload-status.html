@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <h1>File Upload Status </h1><span th:text="${rows}"></span>
+            <!--display error if any-->
+            <div class="alert alert-danger" role="alert" th:if="${!status}">
+                <strong>Error:</strong>
+                <span th:text="${message}"></span>
+            </div>
+
+            <!--display users list-->
+            <table class="table table-striped" th:if="${status}">
+                <thead>
+                <tr>
+                    <th scope="col">State</th>
+                    <th scope="col">Total Balance</th>
+                    <th scope="col">Min Balance</th>
+                    <th scope="col">Max Balance</th>
+                    <th scope="col">Mean Balance</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${summary.isEmpty()}">
+                    <td colspan="2"> No Summary Available </td>
+                </tr>
+                <tr th:each="aSummary: ${summary}">
+                    <td th:text="${aSummary.state}"></td>
+                    <td th:text="${aSummary.totalBalance}"></td>
+                    <td th:text="${aSummary.minBalance}"></td>
+                    <td th:text="${aSummary.maxBalance}"></td>
+                    <td th:text="${aSummary.meanBalance}"></td>
+                </tr>
+                <!--        <tr th:if="${stateDetails.isEmpty()}">-->
+                <!--          <td colspan="2"> No States Available </td>-->
+                <!--        </tr>-->
+                <!--        <tr th:each="aState: ${stateDetails}">-->
+                <!--          <td th:text="${aState.firstName}"></td>-->
+                <!--          <td th:text="${aState.lastName}"></td>-->
+                <!--          <td th:text="${aState.address}"></td>-->
+                <!--          <td th:text="${aState.city}"></td>-->
+                <!--          <td th:text="${aState.state}"></td>-->
+                <!--          <td th:text="${aState.zip}"></td>-->
+                <!--          <td th:text="${aState.phone}"></td>-->
+                <!--          <td th:text="${aState.balance}"></td>-->
+                <!--        </tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

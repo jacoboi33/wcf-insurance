@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface StateRepository extends CrudRepository<StateDetails, Long>, JpaRepository<CustomerDetails, Long> {
+public interface StateRepository extends CrudRepository<StateDetails, Long>, JpaRepository<StateDetails, Long> {
 
     @Query(value = "select state, " +
             "sum(balance) as total_balance," +
