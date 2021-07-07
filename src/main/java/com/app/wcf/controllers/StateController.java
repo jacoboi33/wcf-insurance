@@ -100,8 +100,10 @@ public class StateController {
 
 
         model.addAttribute("summary", stateSummaries);
+        model.addAttribute("numberOfStates", String.format("%s States", stateSummaries.size()));
         System.out.println(file.getOriginalFilename());
         System.out.println(stateDetails.size());
+        System.out.println(stateSummaries.size());
         System.out.println(i);
         //        model.addAttribute("stateDetails",   stateDetails);
         model.addAttribute("rows", String.format("%s Rows uploaded successfully", stateDetails.size()));

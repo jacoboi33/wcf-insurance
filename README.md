@@ -2,6 +2,34 @@
 
 This is a project that we use to evaluate the technical skills of potential team members.
 
+## Instructions on how to run the project
+
+The database is stored in a postgres.yml docker-compose file to run it run:
+`docker-compose -f postgres.yml up -d`
+
+There are no volumes setup in the docker-compose file so once you destroy the container everything is gone.
+also the data gets delete from the database each time you reload the data.
+
+###Startup the database first this is a web application using thymeleaf
+Then start the spring boot application and go to `localhost:8080`
+from there just upload a file and wait for the summary to show on the screen and the download will download to the project home.
+#### The schema is built from the data-schema.sql on spring startup.
+#### `summary.csv` gets created in the wcf-insurance project directory.
+
+## Things I would do if I had more time
+* csv download from the web browser
+* create a nav bar, and a way to go to the summary and detail page also use pagination for the detail page 
+* so not all 10000 rows load in the pages.
+* I would also setup a complete docker-compose environment for the entire application to run in.
+* I would also make the pages look better.
+* I would also add a spinner showing that data was still being uploaded to the database.
+
+## Tech stack I used for this project
+* Java 11
+* Spring Boot
+* PostgreSQL
+* thymeleaf
+
 ## Requirements
 
 This repository contains a file called `balances.csv` with the following colummns:
